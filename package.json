@@ -1,0 +1,26 @@
+{
+  "name": "screeps-world",
+  "version": "1.0.0",
+  "description": "Screeps world repo in javascript",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkinder/screeps-world.git"
+  },
+  "keywords": [
+    "javascript",
+    "screeps"
+  ],
+  "author": "Ryan Kinder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkinder/screeps-world/issues"
+  },
+  "homepage": "https://github.com/rkinder/screeps-world#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
