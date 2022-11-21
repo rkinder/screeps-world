@@ -1,5 +1,6 @@
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
+var spawner = require('spawner');
 
 module.exports.loop = function () {
 
@@ -22,9 +23,7 @@ module.exports.loop = function () {
     for(var name in Game.spawns) {
         var spawn = Game.spawns[name];
         if (spawn.spawning == false) {
-            // Consider the controller level
-            // decide what to spawn
-            // call the spawn routine
+            spawner.evalNeed(spawn)
         }
     }
 
