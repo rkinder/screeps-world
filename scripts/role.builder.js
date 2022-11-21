@@ -22,6 +22,9 @@ var roleBuilder = {
                 }
             }
         }
+    },
+    spawn: function(creep) {
+        
     }
 
 };
