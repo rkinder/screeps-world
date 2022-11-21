@@ -1,26 +1,48 @@
 
 var spawner = {
 
-    spawnCreep: function(spawn) {
-
-    },
     evalNeed: function(spawn) {
-        for (var name in Game.creeps) {
-            // check current role
+        spawnRoom =spawn.room
+        curLevel = Game.rooms[spawnRoom.name].controlLevel
+
+        for (var creep in Game.creeps) {
             // check time to live
-            spawnRoom =spawn.room
-            curLevel = Game.rooms[spawnRoom.name].controlLevel
-            
-            // if we need something, get the appropriate build
-            switch(need) {
+            remainingLifeTime = ((creep.ticksToLive/1500)*100);
+            switch(creep.Memory.role) {
                 case 'builder':
-                    this.spawnBuilderType(spawn,curLevel);
+                    builderCount = builderCount + 1;
+                    totalCreeps = totalCreeps + 1;
                     break;
                 case 'harvester':
-                    this.spawnHarvesterType(spawn,curLevel);
+                    harvesterCount = harvesterCount + 1;
+                    totalCreeps = totalCreeps + 1;
                     break;
             };
-        }
+
+            // Basic balancing act for deciding what to spawn
+            if (harvesterCount == 0) {
+                // spawn a harvester
+                need = 'harvester'
+            } else if ((builderCount == 0) && (harvesterCount > 0)) {
+                // spawn a builder
+                need = 'builder'
+            } else {
+                if (harvesterCount > builderCount) { need = 'builder' } 
+                else { need = 'harvester' }
+            }
+              
+        }        
+
+        // if we need something, get the appropriate build
+        switch(need) {
+            case 'builder':
+                this.spawnBuilderType(spawn,curLevel);
+                break;
+            case 'harvester':
+                this.spawnHarvesterType(spawn,curLevel);
+                break;
+        };
+    
     },
     spawnBuilderType: function(spawn,controlLevel) {
         
