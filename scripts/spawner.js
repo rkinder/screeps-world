@@ -1,5 +1,3 @@
-const { spawn } = require("./role.builder");
-
 var spawner = {
 
     evalNeed: function(spawn) {
