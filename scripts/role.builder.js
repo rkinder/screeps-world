@@ -22,11 +22,7 @@ var roleBuilder = {
                 }
             }
         }
-    },
-    spawn: function() {
-
     }
-
 };
 
 module.exports = roleBuilder;
