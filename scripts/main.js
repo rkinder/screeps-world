@@ -19,6 +19,15 @@ module.exports.loop = function () {
         }
     }
 
+    for(var name in Game.spawns) {
+        var spawn = Game.spawns[name];
+        if (spawn.spawning == false) {
+            // Consider the controller level
+            // decide what to spawn
+            // call the spawn routine
+        }
+    }
+
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
