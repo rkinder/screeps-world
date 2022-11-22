@@ -40,8 +40,6 @@ var spawner = {
             case 'harvester':
                 this.spawnHarvesterType(spawnRoom,curLevel);
                 break;
-            default:
-                break;
         };
     
     },
