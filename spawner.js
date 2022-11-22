@@ -51,11 +51,11 @@ var spawner = {
     spawnBuilderType: function(spawn) {
         spawnObj = Game.spawns[spawn];
         body = [CARRY,CARRY,WORK,MOVE,MOVE];
-        
+
         if ((spawnObj.room.energyCapacityAvailable >= 350) && (spawnObj.room.energyCapacityAvailable <= 450)) {
             body.push(WORK);
         }
-        spawn.spawnCreep(body, nextName, {Memory: {role: 'builder'}});
+        spawn.spawnCreep(body, nextName, {memory: {role: 'builder'}});
     },
     spawnHarvesterType: function(spawn) {
         spawnObj = Game.spawns[spawn];
@@ -65,7 +65,7 @@ var spawner = {
             body.push(MOVE);
         }
 
-        spawnObj.spawnCreep(body, this.nextName(), {Memory: {role: 'harvester'}});
+        spawnObj.spawnCreep(body, this.nextName(), {memory: {role: 'harvester'}});
     },
     nextName: function() {
         
