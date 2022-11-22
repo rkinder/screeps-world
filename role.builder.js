@@ -2,7 +2,8 @@ var roleBuilder = {
 
     /** @param {Creep} creep **/
     run: function(creepName) {
-        creep = Game.creeps[creepName];
+        console.log("Builder - Creep: " + creepName);
+        var creep = Game.creeps[creepName];
         if(creep.store.energy < creep.store.getCapacity()) {
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {

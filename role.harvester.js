@@ -2,6 +2,7 @@ var roleHarvester = {
 
     /** @param {Creep} creep **/
     run: function(creepName) {
+        console.log("Harvester - Creep: " + creepName);
         var creep = Game.creeps[creepName];
         if(creep.store.energy < creep.store.getCapacity()) {
             var sources = creep.room.find(FIND_SOURCES);
