@@ -10,7 +10,7 @@ module.exports.loop = function () {
         }
     }
 
-    if ( Game.creeps.length > 0 ){
+    if ( Game.creeps ){
         for(var creep in Game.creeps) {
         
             if ((creep.memory['role'] == 'harvester') || (creep.memory['role'] == 'Harvester')) {
