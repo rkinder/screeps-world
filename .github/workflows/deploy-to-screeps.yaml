@@ -1,0 +1,9 @@
+name: deploy-to-screeps
+run-name: ${{ github.actor }} is deploying to screeps
+on: [push]
+jobs:
+  run-screeps-deployer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Screeps Deployer
+        uses: aphistic/screeps-deployer@v0.1.0

@@ -1,0 +1,9 @@
+modules:
+  - name: main
+    file: scripts/main.js
+  - name: role.builder
+    file: scripts/role.builder.js
+  - name: role.harvester
+    file: scripts/role.harvester.js
+  - name: spawner
+    file: scripts/spawner.js
