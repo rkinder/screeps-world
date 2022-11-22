@@ -57,14 +57,14 @@ var spawner = {
         spawn.spawnCreep(body, nextName, {Memory: {role: 'builder'}});
     },
     spawnHarvesterType: function(spawn) {
-
-        console.log(JSON.stringify(spawn));
+        spawnObj = Game.spawns[spawn];
+ 
         body = [CARRY,WORK,WORK,MOVE];
-        if ((spawn.room.energyAvailable >= 350) && (spawn.room.energyAvailable <= 450)) {
+        if ((spawnObj.room.energyAvailable >= 350) && (spawnObj.room.energyAvailable <= 450)) {
             body.push(MOVE);
         }
 
-        spawn.spawnCreep(body, this.nextName(), {Memory: {role: 'harvester'}});
+        spawnObj.spawnCreep(body, this.nextName(), {Memory: {role: 'harvester'}});
     },
     nextName: function() {
         
