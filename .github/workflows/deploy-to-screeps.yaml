@@ -7,3 +7,4 @@ jobs:
     steps:
       - name: Screeps Deployer
         uses: aphistic/screeps-deployer@v0.1.0
+        secrets: "SCREEPS_TOKEN"
