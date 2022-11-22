@@ -12,7 +12,7 @@ jobs:
       id: codedeploy
       uses: kskitek/screeps-pusher@v0.1
       with:
-        branch: master
+        branch: default
         token: ${{ secrets.SCREEPS_TOKEN }}
         dir: scripts/
         
