@@ -1,18 +1,19 @@
-name: deploy-to-screeps
+name: Deploy to Screeps
 run-name: ${{ github.actor }} is deploying to screeps
 on: push
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-  - name: Checkout 
-    uses: actions/checkout@master
-
-  - name: Push the code
-    id: codedeploy
-    uses: kskitek/screeps-pusher@v0.1
-      with:
-        branch: master
-        token: ${{ secrets.SCREEPS_TOKEN }}
-        dir: scripts/
+  push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@master
+      
+    - name: Push the code
+      id: codedeploy
+      uses: kskitek/screeps-pusher@v0.1
+        with:
+          branch: master
+          token: ${{ secrets.SCREEPS_TOKEN }}
+          dir: scripts/
         
         
