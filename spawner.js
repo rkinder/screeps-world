@@ -58,7 +58,7 @@ var spawner = {
     },
     spawnHarvesterType: function(spawn) {
 
-        console.log("Room: " + spawn.room.name + "Energy: " + spawn.room.energyAvailable);
+        console.log(JSON.stringify(spawn));
         body = [CARRY,WORK,WORK,MOVE];
         if ((spawn.room.energyAvailable >= 350) && (spawn.room.energyAvailable <= 450)) {
             body.push(MOVE);
