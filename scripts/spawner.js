@@ -16,21 +16,21 @@ var spawner = {
                     harvesterCount = harvesterCount + 1;
                     totalCreeps = totalCreeps + 1;
                     break;
-            };
-
-            // Basic balancing act for deciding what to spawn
-            if (harvesterCount == 0) {
-                // spawn a harvester
-                need = 'harvester'
-            } else if ((builderCount == 0) && (harvesterCount > 0)) {
-                // spawn a builder
-                need = 'builder'
-            } else {
-                if (harvesterCount > builderCount) { need = 'builder' } 
-                else { need = 'harvester' }
             }
-              
-        }        
+        }
+
+        // Basic balancing act for deciding what to spawn
+        if (harvesterCount == 0) {
+            // spawn a harvester
+            need = 'harvester'
+        } else if ((builderCount == 0) && (harvesterCount > 0)) {
+            // spawn a builder
+            need = 'builder'
+        } else {
+            if (harvesterCount > builderCount) { need = 'builder' } 
+            else { need = 'harvester' }
+        }
+                  
 
         // if we need something, get the appropriate build
         switch(need) {
