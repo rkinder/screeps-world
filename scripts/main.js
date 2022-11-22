@@ -4,23 +4,18 @@ var spawner = require('spawner');
 
 module.exports.loop = function () {
 
-    for(var name in Game.spawns) {
-        var spawn = Game.spawns[name];
-        if (spawn.spawning == false) {
+    for(var spawn in Game.spawns) {
+        if (!spawn.spawning) {
             spawner.evalNeed(spawn)
         }
     }
 
-    for(var name in Game.creeps) {
-        var creep = Game.creeps[name];
+    for(var creep in Game.creeps) {
+        
         if(creep.memory.role == 'harvester') {
             roleHarvester.run(creep);
         }
-        /*
-        if(creep.memory.role == 'upgrader') {
-            roleUpgrader.run(creep);
-        } 
-        */
+
         if(creep.memory.role == 'builder') {
             roleBuilder.run(creep);
         }
