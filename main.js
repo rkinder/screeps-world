@@ -11,14 +11,14 @@ module.exports.loop = function () {
     }
 
     if ( Game.creeps ){
-        for(var creep in Game.creeps) {
-        
+        for(var creepName in Game.creeps) {
+            creep = Game.creeps[creepName];
             if ((creep.memory['role'] == 'harvester') || (creep.memory['role'] == 'Harvester')) {
-                roleHarvester.run(creep);
+                roleHarvester.run(creepName);
             }
     
             if ((creep.memory['role'] == 'builder') || (creep.memory['role'] == 'Builder')) {
-                roleBuilder.run(creep);
+                roleBuilder.run(creepName);
             }
             
         }
