@@ -35,15 +35,15 @@ var spawner = {
         // if we need something, get the appropriate build
         switch(need) {
             case 'builder':
-                this.spawnBuilderType(spawnRoom,curLevel);
+                this.spawnBuilderType(spawnRoom);
                 break;
             case 'harvester':
-                this.spawnHarvesterType(spawnRoom,curLevel);
+                this.spawnHarvesterType(spawnRoom);
                 break;
         };
     
     },
-    spawnBuilderType: function(spawn,controlLevel) {
+    spawnBuilderType: function(spawn) {
         
         body = [CARRY,CARRY,WORK,MOVE,MOVE];
         if ((spawn.room.energyCapacityAvailable >= 350) && (spawn.room.energyCapacityAvailable <= 450)) {
@@ -51,7 +51,7 @@ var spawner = {
         }
         spawn.spawnCreep(body, nextName, {Memory: {role: 'builder'}});
     },
-    spawnHarvesterType: function(spawn,controlLevel) {
+    spawnHarvesterType: function(spawn) {
         body = [CARRY,WORK,WORK,MOVE];
         if ((spawn.room.energyCapacityAvailable >= 350) && (spawn.room.energyCapacityAvailable <= 450)) {
             body.push(MOVE);
