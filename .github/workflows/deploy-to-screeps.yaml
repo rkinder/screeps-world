@@ -14,6 +14,6 @@ jobs:
       with:
         branch: default
         token: ${{ secrets.SCREEPS_TOKEN }}
-        dir: scripts/
+        dir: ./
         
         
