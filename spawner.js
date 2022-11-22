@@ -50,7 +50,6 @@ var spawner = {
     },
     spawnBuilderType: function(spawn) {
         
-        console.log("Energy for spawn" + spawn.room.energyAvailable);
         body = [CARRY,CARRY,WORK,MOVE,MOVE];
         if ((spawn.room.energyAvailable >= 350) && (spawn.room.energyAvailable <= 450)) {
             body.push(WORK);
@@ -58,6 +57,8 @@ var spawner = {
         spawn.spawnCreep(body, nextName, {Memory: {role: 'builder'}});
     },
     spawnHarvesterType: function(spawn) {
+
+        console.log("Room: " + spawn.room.name + "Energy: " + spawn.room.energyAvailable);
         body = [CARRY,WORK,WORK,MOVE];
         if ((spawn.room.energyAvailable >= 350) && (spawn.room.energyAvailable <= 450)) {
             body.push(MOVE);
