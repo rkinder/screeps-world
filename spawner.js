@@ -1,8 +1,7 @@
 var spawner = {
 
     evalNeed: function(spawn) {
-        spawnRoom =spawn.room
-        curLevel = Game.rooms[spawnRoom.name].controlLevel
+        spawnRoom =spawn.room;
 
         var harvesterCount = 0;
         var builderCount = 0;
