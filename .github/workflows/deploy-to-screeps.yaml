@@ -11,9 +11,9 @@ jobs:
     - name: Push the code
       id: codedeploy
       uses: kskitek/screeps-pusher@v0.1
-        with:
-          branch: master
-          token: ${{ secrets.SCREEPS_TOKEN }}
-          dir: scripts/
+      with:
+        branch: master
+        token: ${{ secrets.SCREEPS_TOKEN }}
+        dir: scripts/
         
         
