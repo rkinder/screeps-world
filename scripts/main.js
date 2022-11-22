@@ -10,15 +10,18 @@ module.exports.loop = function () {
         }
     }
 
-    for(var creep in Game.creeps) {
+    if ( Game.creeps.length > 0 ){
+        for(var creep in Game.creeps) {
         
-        if(creep.memory.role == 'harvester') {
-            roleHarvester.run(creep);
+            if(creep.memory.role == 'harvester') {
+                roleHarvester.run(creep);
+            }
+    
+            if(creep.memory.role == 'builder') {
+                roleBuilder.run(creep);
+            }
+            
         }
-
-        if(creep.memory.role == 'builder') {
-            roleBuilder.run(creep);
-        }
-        
     }
+
 }
