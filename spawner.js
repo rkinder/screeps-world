@@ -51,6 +51,7 @@ var spawner = {
     spawnBuilderType: function(spawn) {
         spawnObj = Game.spawns[spawn];
         body = [CARRY,CARRY,WORK,MOVE,MOVE];
+        
         if ((spawnObj.room.energyCapacityAvailable >= 350) && (spawnObj.room.energyCapacityAvailable <= 450)) {
             body.push(WORK);
         }
@@ -58,8 +59,8 @@ var spawner = {
     },
     spawnHarvesterType: function(spawn) {
         spawnObj = Game.spawns[spawn];
- 
         body = [CARRY,WORK,WORK,MOVE];
+
         if ((spawnObj.room.energyCapacityAvailable >= 350) && (spawnObj.room.energyCapacityAvailable <= 450)) {
             body.push(MOVE);
         }
