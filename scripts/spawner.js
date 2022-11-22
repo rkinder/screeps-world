@@ -4,20 +4,26 @@ var spawner = {
         spawnRoom =spawn.room
         curLevel = Game.rooms[spawnRoom.name].controlLevel
 
-        for (var creep in Game.creeps) {
-            // check time to live
-            remainingLifeTime = ((creep.ticksToLive/1500)*100);
-            switch(creep.Memory.role) {
-                case 'builder':
-                    builderCount = builderCount + 1;
-                    totalCreeps = totalCreeps + 1;
-                    break;
-                case 'harvester':
-                    harvesterCount = harvesterCount + 1;
-                    totalCreeps = totalCreeps + 1;
-                    break;
+        var harvesterCount = 0;
+        var builderCount = 0;
+
+        if ( Game.creeps.length > 0) {
+            for (var creep in Game.creeps) {
+                // check time to live
+                remainingLifeTime = ((creep.ticksToLive/1500)*100);
+                switch(creep.Memory.role) {
+                    case 'builder':
+                        builderCount = builderCount + 1;
+                        totalCreeps = totalCreeps + 1;
+                        break;
+                    case 'harvester':
+                        harvesterCount = harvesterCount + 1;
+                        totalCreeps = totalCreeps + 1;
+                        break;
+                }
             }
         }
+
 
         // Basic balancing act for deciding what to spawn
         if (harvesterCount == 0) {
