@@ -40,10 +40,10 @@ var spawner = {
         // if we need something, get the appropriate build
         switch(need) {
             case 'builder':
-                this.spawnBuilderType(spawnRoom);
+                this.spawnBuilderType(spawn);
                 break;
             case 'harvester':
-                this.spawnHarvesterType(spawnRoom);
+                this.spawnHarvesterType(spawn);
                 break;
         };
     
