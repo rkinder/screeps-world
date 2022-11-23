@@ -17,7 +17,17 @@ var buildManager = {
          }
          room.memory['conSites'] = siteArray;
       } 
-    } 
+    },
+    manageController: function() {
+      // if the rooms list is not memorized, abandon
+      if ( Object.keys(Memory.rooms).length ) {
+         
+      }
+      // check controller time to degrade
+      // TODO: check current initiative in memory
+      // Assign number of screeps based on conditions
+    
+    }
 };
 
 module.exports = roomManager;
