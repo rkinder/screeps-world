@@ -23,7 +23,7 @@ var roleHarvester = {
 			if (creep.pos.isNearTo (source)) {
 				var result = creep.harvest (source);
 				if (result != OK) {
-					console.log ('[{}] Unknown result from creep.harvest({}): {}'.format (creep.name, source, result));
+					console.log ('[%s] Unknown result from creep.harvest(%s): %s',creep.name, source, result);
 				}
 			}
 			else {
@@ -53,13 +53,13 @@ var roleHarvester = {
 						delete creep.memory.target;
 					}
 					else {
-						console.log ('[{}] Unknown result from creep.transfer({}, {}): {}'.format (creep.name, target, RESOURCE_ENERGY, result));
+						console.log ('[%s] Unknown result from creep.transfer(%s, %s): %s',creep.name, target, RESOURCE_ENERGY, result);
 					}
 				}
 				else {
 					var result = creep.upgradeController (target);
 					if (result != OK) {
-						console.log ('[{}] Unknown result from creep.upgradeController({}): {}'.format (creep.name, target, result));
+						console.log ('[%s] Unknown result from creep.upgradeController(%s): %s',creep.name, target, result);
 					}
 					if (!(creep.pos.inRangeTo (target, 2))) {
 						creep.moveTo (target);

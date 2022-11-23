@@ -21,7 +21,7 @@ var roleBuilder = {
 			if (creep.pos.isNearTo (source)) {
 				var result = creep.harvest (source);
 				if (result != OK) {
-					console.log ('[{}] Unknown result from creep.harvest({}): {}'.format (creep.name, source, result));
+					console.log ('[%s] Unknown result from creep.harvest(%s): %s', creep.name, source, result);
 				}
 			}
 			else {
@@ -51,7 +51,7 @@ var roleBuilder = {
 				var result = creep.build (target);
 				if (result != OK) {
 					// if we have a bad build, delete the target, try again
-					console.log ('[{}] Unknown result from creep.build({}): {}'.format (creep.name, target, result));
+					console.log ('[%s] Unknown result from creep.build(%s): %s', creep.name, target, result);
 					delete creep.memory.target;
 				}
 				if (!(creep.pos.inRangeTo (target, 2))) {
