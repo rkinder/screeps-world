@@ -10,12 +10,12 @@ var spawner = {
         var totalCreeps = 0;
 
 
-        console.log("starting evalNeed");
+        // console.log("starting evalNeed");
         if ( Object.keys(Game.creeps).length > 0) {
             for (var creep in Game.creeps) {
                 // check time to live
                 remainingLifeTime = ((Game.creeps[creep].ticksToLive/1500)*100);
-                console.log("ttl set:" + creep);
+                // console.log("ttl set:" + creep);
                 if (Game.creeps[creep].memory['role'] !== undefined) {
             
                     switch(Game.creeps[creep].memory['role']) {
@@ -30,13 +30,13 @@ var spawner = {
                     }
                     
                 } else {
-                    console.log("Creep: " + creep + " - ELSE");
+                    // console.log("Creep: " + creep + " - ELSE");
                     Game.creeps[creep].memory['role'] = 'harvester';
                 }
             }
         }
 
-        console.log("After for loop");
+        // console.log("After for loop");
         
         // Basic balancing act for deciding what to spawn
         if (harvesterCount == 0) {
@@ -60,7 +60,7 @@ var spawner = {
                 this.spawnHarvesterType(spawn);
                 break;
         }
-        console.log("Leaving spawner.evalNeed()");
+        // console.log("Leaving spawner.evalNeed()");
     
     },
     spawnBuilderType: function(spawn) {
