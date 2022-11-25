@@ -2,7 +2,7 @@ var roleUpgrader = {
 
     run: function(creep) {
 
-        if (creep.memory.filling && _.sum (creep.carry) >= creep.carryCapacity) {
+        if (creep.memory.filling && _.sum (creep.store) >= creep.store) {
             creep.memory.filling = false;
             delete creep.memory.source;
         }
@@ -15,8 +15,15 @@ var roleUpgrader = {
                 var source = Game.getObjectById (creep.memory.source);
             }
             else {
-                var source = _.sample (creep.room.find (FIND_SOURCES));
-                creep.memory.source = source.id;
+                if (creep.room.memory.sources !== undefined) {
+                    //TODO: assign more than just the first source
+                    var source = _.sample (creep.room.memory.sources);
+                    creep.memory.source = source.id;
+                } else {
+                    var source = _.sample (creep.room.find (FIND_SOURCES));
+                    creep.memory.source = source.id;
+                }
+
             }
             if (creep.pos.isNearTo (source)) {
                 var result = creep.harvest (source);
